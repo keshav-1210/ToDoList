@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+
+    <header class=" centr">
+        WELCOME TO YOUR TO-DO LIST
+        
+    </header>
+    <div id="mainbody" >
+        <h1 >Upcoming tasks</h1> 
+    <div id="uptasklist" class="blurbk">
+        <% if(locals.task && locals.taskt){ %>
+
+            <% for (var i=0; i<c; i++) { %>
+                <ul style="list-style-type: none;">
+
+
+                    <li>
+                        <form action="/submit">
+
+                            <input type="checkbox" id="radio" onclick="" name="" ><label for="radio">
+                                <%= task[i] %>
+                                    <%= taskt[i] %>
+                            </label>
+                        </form>
+                    </li>
+
+                </ul>
+
+                <%} } %>
+
+                    <% %>
+                </div>
+                <footer class="blurbk">
+                    <div id="taskname">
+                    <form action="/submit" method="POST" id="frm">
+                      
+                   
+                        <input  class ="input" type="text" name="description" placeholder="Enter Ur Task" required class="">
+                
+                
+                    
+                           <label for="deadline">Choose a time for your task:</label>
+                            <input class="input" type="datetime-local" id="time" name="time" value="Select The Time " min=new Date()
+                                max="2024-12-31T00:00" />
+                               
+                            <input type="submit" id="add" class="btn input" value="Add Task">
+                             
+                       
+                    </form>
+                    <div  id="reset">
+                        <form action="/" method="get">
+                            <input type="submit" class="btn input" value="Reset" >
+                        </form>
+                    </div>
+                    
+                </div>
+                
+                   
+                             
+                   
+                </footer>
+    </div>
+    
+  
+         <script>
+        const rB = document.querySelectorAll("input[type='checkbox']");
+        for (const r of rB) {
+            r.addEventListener("change", function () {
+                if (this.checked) {
+                    let label = this.nextElementSibling;
+                    
+                    label.classList.add("strikethrough");
+                    
+                }
+                if(!(this.checked))
+                {
+                    let label = this.nextElementSibling;
+                   
+                    label.classList.remove("strikethrough"); 
+                }
+
+            });
+            
+        }
+     
+    </script>
+</body>
+
+</html>
