@@ -1,1 +1,2 @@
-This is a basic TO - DO list having features of adding a task and its time , Reset and checkbox for indicating the completion of the task
+<h1>This is a ToDoList Appliccation</h1>
+<p> It uses HTML, CSS,Vanilla JS, Node.js and Express.js</p>
